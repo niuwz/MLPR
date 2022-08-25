@@ -29,7 +29,7 @@ data = dataset(data.iloc[:, :])
 <!-- ![图片](pictures/PCA%E9%99%8D%E7%BB%B4.png) -->
 
 <center>
-<img src="pictures/PCA降维.png" height=280>
+<img src="./pictures/PCA降维.png" height=280>
 </center>
 
 由上图可知，当保留数量为350时，方差和占比大于99%,绝大部分信息没有丢失，因此选择保留特征数量350并使用PCA对其进行降维。
@@ -45,7 +45,7 @@ data = dataset(data.iloc[:, :])
 
 <figure class="half">
 <center>
-    <img src="pictures/knn数据规模与准确率关系.png" height=190><img src="pictures/knn数据规模与时间关系.png" height=190>
+    <img src="./pictures/knn数据规模与准确率关系.png" height=190><img src="./pictures/knn数据规模与时间关系.png" height=190>
 </center>
 </figure>
 
