@@ -33,6 +33,7 @@ if __name__ == "__main__":
     pca = PCA(350)
     pca.fit(data.x)
     ret_x = pca.transform(data.x)
+    # 将特征向量与标签合并
     ret_data = np.hstack([ret_x, data.y.reshape(-1, 1)])
     print(ret_data.shape)
     ret_data = pd.DataFrame(ret_data)

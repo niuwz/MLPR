@@ -53,6 +53,9 @@ def MLP_train(train_data, validation_data, test_data, hidden_cells, lr, batch_si
 
 if __name__ == "__main__":
     data = pd.read_csv("pca_mnist.csv", index_col=0)
+    # data = pd.read_csv("hog_mnist.csv", index_col=0)
+    # 特征数量
+    VECTOR_LENGTH = data[0].shape[1]-1
     # 留出测试集
     test_data = dataset(data.iloc[60000:, :])
     datas = []
@@ -64,7 +67,7 @@ if __name__ == "__main__":
         datas.append(data.iloc[i:i+12000, :])
     for i in range(5):
         train_data = dataset(pd.DataFrame(
-            np.array(datas[:i]+datas[i+1:]).reshape(-1, 351)))
+            np.array(datas[:i]+datas[i+1:]).reshape(-1, VECTOR_LENGTH+1)))
         validation_data = dataset(datas[i])
         '''MLP训练与正确率计算'''
         vali_loss, test_loss = MLP_train(train_data, validation_data, test_data, hidden_cells=(64, ),

@@ -9,6 +9,7 @@ from Dataset import dataset
 if __name__ == "__main__":
     # 读取前1000条数据进行初步训练
     data = pd.read_csv("pca_mnist.csv", index_col=0)
+    # data = pd.read_csv("hog_mnist.csv", index_col=0)
     data = dataset(data.iloc[:1000, :])
     accs = []
     for i in range(10, 301, 50):

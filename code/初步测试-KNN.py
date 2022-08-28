@@ -10,6 +10,7 @@ from Dataset import dataset
 if __name__ == "__main__":
     # 读取前2000条数据进行初步训练，第2001~3000条数据进行初步测试
     data = pd.read_csv("pca_mnist.csv", index_col=0)
+    # data = pd.read_csv("hog_mnist.csv", index_col=0)
     train_data = dataset(data.iloc[:2000, :])
     test_data = dataset(data.iloc[2000:3000, :])
     # 对比K的大小对分类准确率的影响

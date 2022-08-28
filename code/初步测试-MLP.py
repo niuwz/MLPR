@@ -9,10 +9,12 @@ from Dataset import dataset
 
 if __name__ == "__main__":
     data = pd.read_csv("pca_mnist.csv", index_col=0)
+    # data = pd.read_csv("hog_mnist.csv", index_col=0)
     train_data = dataset(data.iloc[:2000, :])
     test_data = dataset(data.iloc[2000:3000, :])
 
     bp = MLP(350, 10, lr=0.001)
+    # bp = MLP(128, 10, lr=0.001)
     batch_size = 80
     losses = []
     # 梯度下降迭代过程
